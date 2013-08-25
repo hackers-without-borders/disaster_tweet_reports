@@ -11,18 +11,21 @@ ADMINS = (
 MANAGERS = ADMINS
 
 import dj_database_url
-DATABASES = {
- 'default': {
-     'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-     'NAME': '../../tweetreports.db',                      # Or path to database file if using sqlite3.
-     # The following settings are not used with sqlite3:
-     'USER': 'hwb',
-     'PASSWORD': 'hackers',
-     'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-     'PORT': '',                      # Set to empty string for default.
- }
-}
-#DATABASES['default'] = dj_database_url.config()
+
+DATABASES = {}
+
+# DATABASES = {
+#  'default': {
+#      'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#      'NAME': '../../tweetreports.db',                      # Or path to database file if using sqlite3.
+#      # The following settings are not used with sqlite3:
+#      'USER': 'hwb',
+#      'PASSWORD': 'hackers',
+#      'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+#      'PORT': '',                      # Set to empty string for default.
+#  }
+# }
+DATABASES['default'] = dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -68,20 +71,16 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
-
-# URL prefix for static files.
-# Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
 
 # Static asset configuration
 import os
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(PROJECT_PATH, 'static'),
 )
 
 
