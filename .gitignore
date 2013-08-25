@@ -1,2 +1,4 @@
 *.pyc
 keys.txt
+venv
+staticfiles
