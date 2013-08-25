@@ -11,18 +11,18 @@ ADMINS = (
 MANAGERS = ADMINS
 
 import dj_database_url
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#         'NAME': '../../tweetreports.db',                      # Or path to database file if using sqlite3.
-#         # The following settings are not used with sqlite3:
-#         'USER': 'hwb',
-#         'PASSWORD': 'hackers',
-#         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-#         'PORT': '',                      # Set to empty string for default.
-#     }
-# }
-DATABASES['default'] = dj_database_url.config()
+DATABASES = {
+ 'default': {
+     'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+     'NAME': '../../tweetreports.db',                      # Or path to database file if using sqlite3.
+     # The following settings are not used with sqlite3:
+     'USER': 'hwb',
+     'PASSWORD': 'hackers',
+     'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+     'PORT': '',                      # Set to empty string for default.
+ }
+}
+#DATABASES['default'] = dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
