@@ -13,6 +13,7 @@ class TwitterBot(models.Model):
 
 #The parsed version of an incoming tweet
 class Update(models.Model):
+	tweet_id = models.IntegerField(blank=False, db_index=True)
 	TwitterBot = models.ForeignKey(TwitterBot) #which Bot the Update is associated with
 	tweet_text = models.CharField(max_length=1000)
 
@@ -20,3 +21,5 @@ class Update(models.Model):
 	tweet_origin = models.CharField(max_length=30) 
 	tweet_geocode = models.CharField(max_length=200)
 	#tweet_image = models.ImageField(upload_to=None)
+
+	tweet_trimmed = models.ChatField(max_length = 2000)
