@@ -22,4 +22,4 @@ class Update(models.Model):
 	tweet_geocode = models.CharField(max_length=200)
 	#tweet_image = models.ImageField(upload_to=None)
 
-	tweet_trimmed = models.ChatField(max_length = 2000)
+	tweet_trimmed = models.CharField(max_length = 2000)
